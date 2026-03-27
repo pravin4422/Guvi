@@ -1,0 +1,98 @@
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.register-card {
+    width: 100%;
+    max-width: 420px;
+    border: none;
+    border-radius: 1.25rem;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+}
+
+.card-header-section {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    padding: 2rem;
+    text-align: center;
+    color: white;
+}
+
+.card-header-section .icon-circle {
+    width: 64px;
+    height: 64px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    font-size: 1.75rem;
+}
+
+.card-header-section h4 {
+    font-weight: 700;
+    margin: 0;
+    letter-spacing: 0.5px;
+}
+
+.card-header-section p {
+    margin: 0.25rem 0 0;
+    opacity: 0.85;
+    font-size: 0.9rem;
+}
+
+.card-body-section {
+    padding: 2rem;
+    background: white;
+}
+
+.input-group-text {
+    background: #f8f9fa;
+    border-right: none;
+    color: #667eea;
+}
+
+.form-control {
+    border-left: none;
+}
+
+.form-control:focus {
+    box-shadow: none;
+    border-color: #ced4da;
+}
+
+.input-group:focus-within .input-group-text,
+.input-group:focus-within .form-control {
+    border-color: #667eea;
+}
+
+.btn-register {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border: none;
+    border-radius: 0.6rem;
+    padding: 0.75rem;
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    transition: opacity 0.2s;
+}
+
+.btn-register:hover {
+    opacity: 0.9;
+}
+
+.login-link a {
+    color: #667eea;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}
