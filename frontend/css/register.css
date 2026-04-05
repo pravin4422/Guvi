@@ -1,98 +1,225 @@
 body {
     min-height: 100vh;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: #ffffff;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 1rem;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
 }
 
 .register-card {
     width: 100%;
-    max-width: 420px;
+    max-width: 440px;
     border: none;
-    border-radius: 1.25rem;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+    border-radius: 1.5rem;
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.3), 0 10px 30px rgba(0, 0, 0, 0.15);
     overflow: hidden;
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.register-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35), 0 15px 40px rgba(0, 0, 0, 0.2);
 }
 
 .card-header-section {
-    background: linear-gradient(135deg, #667eea, #764ba2);
-    padding: 2rem;
+    background: linear-gradient(135deg, #10b981 0%, #059669 50%, #047857 100%);
+    padding: 2.5rem 2rem;
     text-align: center;
     color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.card-header-section::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+    animation: pulse 4s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 0.5; }
+    50% { transform: scale(1.1); opacity: 0.8; }
 }
 
 .card-header-section .icon-circle {
-    width: 64px;
-    height: 64px;
-    background: rgba(255, 255, 255, 0.2);
+    width: 72px;
+    height: 72px;
+    background: rgba(255, 255, 255, 0.25);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 auto 1rem;
-    font-size: 1.75rem;
+    margin: 0 auto 1.25rem;
+    font-size: 2rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    position: relative;
+    z-index: 1;
+    transition: transform 0.3s ease;
+}
+
+.card-header-section .icon-circle:hover {
+    transform: scale(1.1) rotate(5deg);
 }
 
 .card-header-section h4 {
     font-weight: 700;
     margin: 0;
     letter-spacing: 0.5px;
+    font-size: 1.75rem;
+    position: relative;
+    z-index: 1;
 }
 
 .card-header-section p {
-    margin: 0.25rem 0 0;
-    opacity: 0.85;
-    font-size: 0.9rem;
+    margin: 0.5rem 0 0;
+    opacity: 0.9;
+    font-size: 0.95rem;
+    position: relative;
+    z-index: 1;
 }
 
 .card-body-section {
-    padding: 2rem;
-    background: white;
+    padding: 2.5rem;
+    background: #ffffff;
 }
 
 .input-group-text {
-    background: #f8f9fa;
+    background: linear-gradient(135deg, #f8f9fa 0%, #f1f3f5 100%);
     border-right: none;
-    color: #667eea;
+    color: #10b981;
+    border: 2px solid #e9ecef;
+    border-radius: 0.75rem 0 0 0.75rem;
+    padding: 0.75rem 1rem;
+    transition: all 0.3s ease;
 }
 
 .form-control {
     border-left: none;
+    border: 2px solid #e9ecef;
+    border-radius: 0 0.75rem 0.75rem 0;
+    padding: 0.75rem 1rem;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
 }
 
 .form-control:focus {
-    box-shadow: none;
-    border-color: #ced4da;
+    box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.1);
+    border-color: #10b981;
+    outline: none;
 }
 
-.input-group:focus-within .input-group-text,
+.input-group:focus-within .input-group-text {
+    border-color: #10b981;
+    background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
+    color: #047857;
+}
+
 .input-group:focus-within .form-control {
-    border-color: #667eea;
+    border-color: #10b981;
+}
+
+.form-label {
+    margin-bottom: 0.5rem;
+    font-size: 0.875rem;
 }
 
 .btn-register {
-    background: linear-gradient(135deg, #667eea, #764ba2);
+    background: linear-gradient(135deg, #10b981 0%, #059669 50%, #047857 100%);
     border: none;
-    border-radius: 0.6rem;
-    padding: 0.75rem;
+    border-radius: 0.75rem;
+    padding: 0.875rem 1.5rem;
     font-weight: 600;
-    font-size: 1rem;
+    font-size: 1.05rem;
     letter-spacing: 0.5px;
-    transition: opacity 0.2s;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(16, 185, 129, 0.4);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-register::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.5s ease;
+}
+
+.btn-register:hover::before {
+    left: 100%;
 }
 
 .btn-register:hover {
-    opacity: 0.9;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(16, 185, 129, 0.5);
+}
+
+.btn-register:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 10px rgba(16, 185, 129, 0.4);
+}
+
+.login-link {
+    color: #6b7280;
+    font-size: 0.95rem;
 }
 
 .login-link a {
-    color: #667eea;
+    color: #10b981;
     font-weight: 600;
     text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.login-link a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #10b981, #059669);
+    transition: width 0.3s ease;
 }
 
 .login-link a:hover {
-    text-decoration: underline;
+    color: #059669;
+}
+
+.login-link a:hover::after {
+    width: 100%;
+}
+
+.mb-3 {
+    margin-bottom: 1.25rem !important;
+}
+
+.mb-4 {
+    margin-bottom: 1.5rem !important;
+}
+
+@media (max-width: 576px) {
+    .card-body-section {
+        padding: 2rem 1.5rem;
+    }
+    
+    .card-header-section {
+        padding: 2rem 1.5rem;
+    }
+    
+    .register-card {
+        max-width: 100%;
+    }
 }
